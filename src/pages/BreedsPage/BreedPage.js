@@ -5,6 +5,7 @@ import './BreedPage.css'
 
 function BreedPage({breeds}) {
     const [randomImg, setRandomImg] = useState([]);
+    const [searchText, setSearchText] = useState("");
     useEffect(() => {
         setRandomImg(breeds.map( breed => {
             axios.get("https://dog.ceo/api/breed/"+breed+"/images/random")
@@ -21,7 +22,7 @@ function BreedPage({breeds}) {
                             Search
                         </Form.Label>
                         <Col sm="9">
-                            <Form.Control type="password" placeholder="Search Dog Breed..." />
+                            <Form.Control type="password" placeholder="Search Dog Breed..." value={searchText} onChange={ e => setSearchText(e.target.value)}/>
                         </Col>
                     </Form.Group>
                     <Button variant="outline-secondary">
