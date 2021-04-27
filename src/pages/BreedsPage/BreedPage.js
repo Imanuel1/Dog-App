@@ -8,10 +8,6 @@ function BreedPage() {
             <Container>
                 {/* nav bar */}
                 <Form>
-                    {/* <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Search</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
-                    </Form.Group> */}
                     <Form.Group as={Row} controlId="formPlaintextPassword">
                         <Form.Label column sm="3">
                             Search
