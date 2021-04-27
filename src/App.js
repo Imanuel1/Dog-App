@@ -11,8 +11,10 @@ function App() {
   useEffect(() => {
     axios.get("https://dog.ceo/api/breeds/list/all").then( response =>
     {
-      const dogs = response.data.message;
-      setBreeds(Object.keys(dogs));
+      const dogs = Object.keys(response.data.message);
+      // axios.get()
+      setBreeds(dogs);
+
     });
   }, []);
 

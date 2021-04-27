@@ -1,9 +1,17 @@
 .c-profile .profile-img{
-    margin: 10px;
-    height: 100%;
+    height: 80%;
+    /* width: 90%; */
+    /* background-position: center center;
+    background-repeat: no-repeat; */
+    position: relative;
 }
 
 .c-profile {
     background-color: rgb(245, 245, 245);
     margin: 10px;
+    text-align: center; /*ensures the image is always in the h-middle*/
+    overflow: hidden; /*hide the cropped portion*/
+    width: 200px;
+    height: 200px;
+    padding: 5px;
 }
