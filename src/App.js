@@ -1,13 +1,14 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-{/* The following line can be included in your src/index.js or App.js file*/}
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import HomePage from './pages/HomePage/HomePage';
+import BreedPage from './pages/BreedsPage/BreedPage';
 
 function App() {
   return (
     <div className="App">
-
+      <HomePage/>
+      <BreedPage/>
     </div>
   );
 }

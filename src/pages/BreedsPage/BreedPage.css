@@ -1,0 +1,6 @@
+.p-breed-page > .container > form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}

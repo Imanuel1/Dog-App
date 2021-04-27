@@ -1,0 +1,13 @@
+.p-home-page > h1{
+    font-size: 7rem;
+    font-family: 'Freckle Face', cursive;
+}
+
+.p-home-page > h2{
+    color: rgb(112, 112, 112);
+    font-family: 'Architects Daughter', cursive;
+}
+
+.p-home-page > .btn{
+    font-family: 'Press Start 2P', cursive;
+}

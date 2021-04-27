@@ -1,0 +1,9 @@
+.c-profile .profile-img{
+    margin: 10px;
+    height: 100%;
+}
+
+.c-profile {
+    background-color: rgb(245, 245, 245);
+    margin: 10px;
+}
