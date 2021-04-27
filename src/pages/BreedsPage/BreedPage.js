@@ -1,8 +1,16 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Form, Row} from 'react-bootstrap';
 import './BreedPage.css'
 
-function BreedPage() {
+function BreedPage({breeds}) {
+    const [randomImg, setRandomImg] = useState([]);
+    useEffect(() => {
+        setRandomImg(breeds.map( breed => {
+            axios.get("https://dog.ceo/api/breed/"+breed+"/images/random")
+        }));
+    }, [])
+
     return (
         <div className="p-breed-page">
             <Container>
