@@ -4,3 +4,10 @@
     justify-content: space-between;
     align-items: flex-start;
 }
+.p-breed-page > .container > form .form-label{
+    font-weight: bold;
+}
+
+.p-breed-page > .container{
+    padding-top: 30px;
+}

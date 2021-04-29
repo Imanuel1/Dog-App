@@ -4,7 +4,7 @@ import './Profile.css';
 import {Redirect} from 'react-router-dom'
 
 //process.env.PUBLIC_URL+"/dog.png"
-function Profile({name , index, updateImg}) {
+function Profile({name ,updateImg}) {
 
     const [urlImg, setUrlImg] = useState(process.env.PUBLIC_URL+"/dog.png");
     const [cardClicked, setCardClicked] = useState(false)
@@ -15,7 +15,7 @@ function Profile({name , index, updateImg}) {
     }, [updateImg])
 
     if(cardClicked) {
-        return <Redirect to={'/breeds/' + index}/>
+        return <Redirect to={'/breeds/' + name}/>
     }
 
     return (

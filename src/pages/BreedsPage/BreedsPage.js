@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Form, Row} from 'react-bootstrap';
+import CustomNavBar from '../../components/CustomNavBar/CustomNavBar';
 import Profile from '../../components/Profile/Profile';
 import './BreedsPage.css'
 
@@ -13,8 +14,8 @@ function BreedsPage({breeds}) {
     
     return (
         <div className="p-breed-page">
+            <CustomNavBar/>
             <Container>
-                {/* nav bar */}
                 <Form>
                     <Form.Group as={Row} controlId="formPlaintext">
                         <Form.Label column sm="3">
@@ -25,11 +26,11 @@ function BreedsPage({breeds}) {
                         </Col>
                     </Form.Group>
                     <Button variant="outline-secondary" onClick={() => setUpdateImg(!updateImg)}>
-                        Secondary
+                        Update Images
                     </Button>
                 </Form>
                 <Row>
-                    {filteredBreeds.map((breed, index) => <Col lg={3} md={6}><Profile key={index} name={breed} key={index} updateImg={updateImg}/></Col>)}
+                    {filteredBreeds.map((breed, index) => <Col lg={3} md={6}><Profile key={index} name={breed} updateImg={updateImg}/></Col>)}
                 </Row>
             </Container>
         </div>

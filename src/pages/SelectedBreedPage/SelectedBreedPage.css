@@ -1,0 +1,42 @@
+.p-selected-breed-page{
+    padding-top: 30px;
+}
+
+.p-selected-breed-page > .h1, .loading > .h3{
+    font-family: 'Permanent Marker', cursive;
+}
+
+.p-selected-breed-page  .loading{
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-selected-breed-page  .loading > .spinner-border{
+    width: 150px;
+    height: 150px;
+    font-size: 40px;
+    margin: 20px;
+}
+
+.p-img-breed .profile-img{
+    height: 90%;
+    /* width: 90%; */
+    /* background-position: center center;
+    background-repeat: no-repeat; */
+    position: relative;
+}
+
+.p-img-breed {
+    background-color: rgb(245, 245, 245);
+    margin: 10px;
+    text-align: center; /*ensures the image is always in the h-middle*/
+    overflow: hidden; /*hide the cropped portion*/
+    width: 300px;
+    height: 300px;
+    padding: 5px;
+    cursor: pointer;
+}
