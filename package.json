@@ -1,7 +1,7 @@
 {
   "name": "dog-app",
   "version": "0.1.0",
-  "homepage": "https://imanuel1.github.io/dog-app",
+  "homepage": "https://imanuel1.github.io/Dog-app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
