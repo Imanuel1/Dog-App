@@ -7,48 +7,43 @@ import Breed from './model/Breed';
 import BreedPage from './pages/BreedsPage/BreedPage';
 
 function App() {
-  const [breeds, setBreeds] = useState(null);
+  const [breeds, setBreeds] = useState([]);
 
   useEffect(() => {
-    axios.get("https://dog.ceo/api/breeds/list/all").then( response1 =>
+    axios.get("https://dog.ceo/api/breeds/list/all").then( response =>
     {
-      const dogs = Object.keys(response1.data.message);
+      const dogs = Object.keys(response.data.message);
+      console.log(dogs);
+      setBreeds(breeds.concat(dogs))
       // axios.get()
-      UpdateImage(dogs)
+      // UpdateImage(dogs)
     });
   }, []);
 
-
-  function UpdateImage(dogs){
-    let test=[];
-    dogs.forEach( (dog, index) => axios.get("https://dog.ceo/api/breed/"+dog+"/images/random").then( response2 =>
-    {
-        // console.log(response2.data.message);
-        test = test.concat([new Breed(dog, response2.data.message)]); //breeds?breeds.concat(new Breed(dog, response2.data.message)):[].push(new Breed(dog, response2.data.message))
-        // console.log(dog);
-        // console.log(response2.data.message);
-        if(dogs.length - 1 === index){
-          console.log("this is:  ");
-          console.log(test);
-          console.log(dogs);
-          console.log(index);
-          setBreeds(dogs.map( (dog, index) => new Breed(dog,test[index])))
-        }
-    }).catch( error => console.error(error)));
-  }
-
-
-  console.log(breeds);
+  console.log("this is breeds: ")
+  console.log(breeds)
+  // function UpdateImage(dogs){
+  //   let test=[];
+  //   dogs.forEach( (dog, index) => axios.get("https://dog.ceo/api/breed/"+dog+"/images/random").then( response2 =>
+  //   {
+  //       // console.log(response2.data.message);
+  //       test = test.concat([new Breed(dog, response2.data.message)]); //breeds?breeds.concat(new Breed(dog, response2.data.message)):[].push(new Breed(dog, response2.data.message))
+  //       // console.log(dog);
+  //       // console.log(response2.data.message);
+  //       if(dogs.length - 1 === index){
+  //         console.log("this is:  ");
+  //         console.log(test);
+  //         console.log(dogs);
+  //         console.log(index);
+  //         setBreeds(dogs.map( (dog, index) => new Breed(dog,test[index])))
+  //       }
+  //   }).catch( error => console.error(error)));
+  // }
 
   return (
     <div className="App">
       <HomePage/>
-      {breeds?
-      <BreedPage breeds={breeds} onUpdateImage={UpdateImage}/>
-      :
-      <p>loading...</p>
-      }
-      
+      <BreedPage breeds={breeds}/>      
     </div>
   );
 }
