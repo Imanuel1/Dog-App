@@ -1,3 +1,9 @@
+.p-home-page {
+    height: 100vh;
+    background-color: rgb(245, 245, 245);
+    padding-top: 50px;
+}
+
 .p-home-page > h1{
     font-size: 7rem;
     font-family: 'Freckle Face', cursive;
@@ -11,3 +17,9 @@
 .p-home-page > .btn{
     font-family: 'Press Start 2P', cursive;
 }
+
+.p-home-page .redirect-breed{
+    text-decoration-line: none;
+    color: inherit;
+}
+

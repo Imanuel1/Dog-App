@@ -2,9 +2,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Form, Row} from 'react-bootstrap';
 import Profile from '../../components/Profile/Profile';
-import './BreedPage.css'
+import './BreedsPage.css'
 
-function BreedPage({breeds}) {
+function BreedsPage({breeds}) {
     const [searchText, setSearchText] = useState("");
     const [updateImg, setUpdateImg] = useState(false);
 
@@ -29,11 +29,11 @@ function BreedPage({breeds}) {
                     </Button>
                 </Form>
                 <Row>
-                    {filteredBreeds.map(breed => <Col lg={3} md={6}><Profile name={breed} updateImg={updateImg}/></Col>)}
+                    {filteredBreeds.map((breed, index) => <Col lg={3} md={6}><Profile key={index} name={breed} key={index} updateImg={updateImg}/></Col>)}
                 </Row>
             </Container>
         </div>
     );
 }
 
-export default BreedPage;
+export default BreedsPage;

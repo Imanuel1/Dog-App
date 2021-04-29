@@ -3,8 +3,11 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import HomePage from './pages/HomePage/HomePage';
 import axios from 'axios';
-import Breed from './model/Breed';
-import BreedPage from './pages/BreedsPage/BreedPage';
+import BreedsPage from './pages/BreedsPage/BreedsPage';
+import {HashRouter, Switch, Route} from 'react-router-dom'
+import SelectedBreedPage from './pages/SelectedBreedPage/SelectedBreedPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+
 
 function App() {
   const [breeds, setBreeds] = useState([]);
@@ -42,8 +45,14 @@ function App() {
 
   return (
     <div className="App">
-      <HomePage/>
-      <BreedPage breeds={breeds}/>      
+      <HashRouter>
+        <Switch>
+          <Route exact path="/"><HomePage/></Route>
+          <Route exact path="/breeds"><BreedsPage breeds={breeds}/> </Route>
+          <Route exact path="/breeds/:breed"><SelectedBreedPage></SelectedBreedPage></Route>
+          <Route><NotFoundPage path="/"></NotFoundPage></Route>
+        </Switch>
+      </HashRouter>
     </div>
   );
 }

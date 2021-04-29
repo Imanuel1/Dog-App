@@ -1,5 +1,5 @@
 export default class Breed{
-    constructor(nameOrObject, url){
+    constructor(nameOrObject, index){
         //for loading the json data
         if (arguments.length === 1 && typeof nameOrObject === "object") {
             this.name = nameOrObject.name;

@@ -1,15 +1,20 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import './HomePage.css'
+import {Redirect, Link} from 'react-router-dom'
 
 function HomePage() {
+
+function redirect(){
+    return <Redirect to="/breeds"/>
+}
+
     return (
-        <div className="p-home-page">
+        <Container className="p-home-page">
             <h1>Dog Book</h1>
             <h2>Man's Best Friend</h2>
-            <Button variant="outline-info">woof!</Button>{' '}
-            <img src={process.env.PUBLIC_URL+"/dog.png"}></img>
-        </div>
+            <Button variant="outline-info"><Link className="redirect-breed" to='/breeds'>woof!</Link></Button>
+        </Container>
     );
 }
 
